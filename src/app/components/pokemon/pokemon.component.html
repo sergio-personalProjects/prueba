@@ -1,0 +1,11 @@
+<!--POKEMON-->
+<div class="card" [ngStyle]="{'display':status}">
+    <div class="photo"
+        style="background-image: url({{imagePokemon}})" (click)="onDetail()">
+    </div>
+    <div class="footer">
+        <div class="titles">
+            <h2 class='card-title'>{{namePokemon}}</h2>
+        </div>
+    </div>
+</div>

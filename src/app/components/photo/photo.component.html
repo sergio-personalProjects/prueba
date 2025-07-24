@@ -1,0 +1,31 @@
+<!--PHOTO-->
+<div class="container-view-three">
+    <div class="photos-view-three">
+        <div [ngStyle]="{'display':statusPhotos}">
+            <img src="{{rear}}"
+                style="width: 24%;" (click)="onClick(1)">
+            <img src="{{front}}"
+                style="width: 24%;" (click)="onClick(2)">
+            <img src="{{rearShiny}}"
+                style="width: 24%;" (click)="onClick(3)">
+            <img src="{{frontShiny}}"
+                style="width: 24%;" (click)="onClick(4)">
+        </div>
+        <div [ngStyle]="{'display':statusPhotosDetail}">
+            <img src="{{maxDetail}}"
+                style="width: 100%;" (click)="onClickDetail()">
+            @if(namePokemonSelected==='charmander'){
+                <h1>{{textContentCharmander}}</h1>
+            }@else{
+                @if(namePokemonSelected==='bulbasaur'){
+                    <h1>{{textContentBulbasaur}}</h1>
+                }@else{
+                    @if(namePokemonSelected==='pikachu'){
+                        <h1>{{textContentPikachu}}</h1>
+                    }
+                }
+            }
+            
+        </div>
+    </div>
+</div>
