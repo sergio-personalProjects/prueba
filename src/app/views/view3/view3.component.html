@@ -1,0 +1,31 @@
+<div class="header">
+    <h1>Ejercicio 3</h1>
+</div>
+<div class="container-two">
+    <div id="tablebot">
+        <div>
+            <h1 style="background-image:url('{{photoFruit}}'); height: 300px; width: 48%; display: inline-block; color: white;"
+                (click)="onClick(1)" [ngStyle]="{'display': displayType}">
+                {{titleFruit}}</h1>
+            <h1 style="background-image: url('{{photoVegetable}}'); height: 300px; width: 48%; display: inline-block; color: white;"
+                (click)="onClick(0)" [ngStyle]="{'display': displayType}">
+                {{titleVegetable}}</h1>
+        </div>
+
+        @if(statusTipe){
+        <div>
+            @for(content of arrayFruits; track content; let i = $index){
+            <img src="{{arrayFruits[i]}}" style="width: 33%;" (click)="photoAugmented(i)" [ngStyle]="{'display': displayPhotos}">
+            }
+            <img src="{{photos}}" style="width: 100%;" (click)="detailImage()" [ngStyle]="{'display': displayDetail}">
+        </div>
+        }@else {
+        <div>
+            @for(content of arrayVegetables; track content; let i = $index){
+                <img src="{{arrayVegetables[i]}}" style="width: 33%;" (click)="photoAugmented(i)" [ngStyle]="{'display': displayPhotos}">
+            }
+            <img src="{{photos}}" style="width: 100%;" (click)="detailImage()" [ngStyle]="{'display': displayDetail}">
+        </div>
+        }
+    </div>
+</div>

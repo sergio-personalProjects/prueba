@@ -1,9 +1,0 @@
-<main class="content">
-    <section>
-        <div class="grid">
-            @for(fruit of fruits; track fruit; let i=$index){
-                <app-card [titleFruits]="fruits[i].name" [photo]="fruits[i].url"></app-card>
-            }
-        </div>
-    </section>
-</main>

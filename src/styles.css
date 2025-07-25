@@ -1,61 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #efefef;
-    color: #3a3a3a;
-    font-family: "Open Sans", sans-serif;
-    line-height: 1.5;
+  background-color: #efefef;
+  color: #3a3a3a;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+  text-align: center;
 }
 
-.content {
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 100px;
-    max-width: 1200px;
-    padding-left: 10px;
-    padding-right: 10px;
+ol, ul {
+  list-style: none;
 }
 
-.grid {
-    grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    grid-column-gap: 25px;
-    grid-row-gap: 50px;
-}
-
-.card {
-    height: 285px;
-    width: 100%;
-    margin-bottom: 25px;
-}
-
-.article {
-    height: 285px;
-    width: 100%;
-    margin-bottom: 50px;
-}
-
-
-.photo {
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-image: url(https://s1.eestatic.com/2021/03/09/ciencia/nutricion/564704609_174935756_1706x960.jpg);
-}
-
-.title {
-    color: white;
-    font-size: 20px;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-    text-align: center;
-    padding: 25% 0;
-}
-
-
-/* Header */
-.header {
+@font-face {
+    font-family: 'Croissant One';
+    src: url("https://fonts/CroissantOne-Regular.ttf");
+  }
+  
+  html {
+    font-size: 18px;
+  }
+  
+  @media only screen and (max-width: 1000px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  
+  @media only screen and (max-width: 680px) {
+    html {
+      font-size: 14px;
+    }
+  }
+  
+  /* Header */
+  
+  .header {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -66,108 +45,105 @@ body {
     font-family: Verdana, sans-serif;
     font-size: .77rem;
     font-weight: bold;
-}
-
-.header li {
+  }
+  
+  .header li {
     display: inline;
     padding-right: 2.22rem;
-}
-
-.header li a {
+  }
+  
+  .header li a {
     text-decoration: none;
     color: #4a4a4a;
-}
-
-@media only screen and (max-width: 550px) {
+  }
+  
+  @media only screen and (max-width: 550px) {
     .header {
-        flex-direction: column;
+      flex-direction: column;
     }
+  
+  }
+  
+.container {
+  grid-column-gap: 25px;
 }
 
-/* Footer */
-footer {
-    display: flex;
-    align-items: center;
-    padding: 0 1%;
-    background-color: #212121;
-    line-height: 1.5;
-    font-family: "Corissant One", "Merriweather", serif;
-    height: 400px;
+.photo-container {
+  height: 285px;
+  width: 100%;
+  margin-bottom: 25px;
 }
 
-
-@media only screen and (max-width: 750px) {
-    footer {
-        flex-direction: column;
-        padding: 0 10% 2rem 10%;
-    }
-
+.photo {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center
 }
 
-
-.card-footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.card-footer .card-title {
-    font-family: "Montserrat", Sans-serif;
-    font-size: 21px;
-    text-transform: uppercase;
-    line-height: 1.3em;
-    color: #C4001A;
-    margin: 10px 0px 10px 0px;
-    padding: 15px 0px 0px 0px;
+.elementor-grid {
+  display: grid;
 }
 
-
-/* Modal */
-
-
-.modal {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    visibility: hidden;
-    transform: scale(1.1);
-    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+.elementor-grid-3 .elementor-grid {
+  grid-template-columns: repeat(3, 1fr)
 }
 
-.modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 1rem 1.5rem;
-    height: 400px;
-    width: 500px;
-    border-radius: 0.5rem;
+.elementor-grid-1 .elementor-grid {
+  grid-template-columns: repeat(1, 1fr)
 }
+/*****/
 
-.close-button {
-    float: right;
-    width: 1.5rem;
-    line-height: 1.5rem;
+
+#tablebot{
+  position: absolute;
+  margin: auto;
+  width: 40%;
+  height: auto;
+  margin-left:30%; 
+  margin-right:30%;
+  }
+  
+  img {
+    width:100%;
+    height: auto;
+  }
+  
+  .container {
+    margin: 0px auto;
+    width: 75%
+  }
+
+  .container-two {
+    margin: 0px auto;
+  }
+  
+   .first-letter {
+    float: left;
+    padding-right: 1.4rem;
+    font-family: "Abril Fatface", serif;
+    font-size: 7.44rem;
+    color: #ffb78c;
+    line-height: 0.87;
+  }
+  
+  .quote {
+    display: block;
+    padding: 4.44rem 0;
+    margin-bottom: 3.33rem;
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
     text-align: center;
-    cursor: pointer;
-    border-radius: 0.25rem;
-    background-color: lightgray;
-}
-
-.close-button:hover {
-    background-color: darkgray;
-}
-
-.show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-}
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 1.2;
+  }

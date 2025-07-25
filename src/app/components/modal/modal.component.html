@@ -1,9 +1,0 @@
-<div [ngClass]="status ? 'modal' : 'modal show-modal'"> <!--Si la variable "status" es true, se pondrá la clase "modal" si es false se pondrá la clase "show-modal"-->
-    <div class="modal-content" [ngStyle]="{'backgroundImage': photo}">
-        <span class="close-button" (click)="onCloseModal()" (click)="status1(statusPost)" (click)="status1(statusArticle)">×</span>
-        <h1>{{title}}</h1>
-    </div>
-</div>
-
-
-
