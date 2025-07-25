@@ -1,13 +1,6 @@
 <main class="content">
     <section>
         <div class="grid" [ngStyle]="{'display': statusPost}">
-            <!-- Componente Post
-            <div class="card">
-                <div class="photo" [ngStyle]="{'backgroundImage': contents[0].url}">
-                    <div class="title">{{contents[0].title}}</div>
-                </div>
-            </div>
-            -->
         @for(content of contents; track content; let i =$index){
             <app-post [title]="content.title" [text]="content.text" [photo]="content.url" (urlPost)="imagePost1($event)" (titlePost)="imagePost2($event)" (textPost)="imagePost3($event)"></app-post>
             }
@@ -16,94 +9,6 @@
         <div class="grid" [ngStyle]="{'display': statusArticle}">
             <!-- Componente Article-->
             <app-article [title]="postTitle" [text]="postText" [photo]="postImage" (urlPhoto)="imageDetail($event)" (titlePhoto)="imageDetailTitle($event)"></app-article>
-            
-            
-            
-            <!--
-            <div class="article">
-                <div class='photo' [ngStyle]="{'backgroundImage': contents[0].url}">
-                </div>
-                <div class="card-footer">
-                    <div>
-                        <h2 class='card-title'>{{contents[0].title}}</h2>
-                        <h3 class='card-text'>{{contents[0].text}}</h3>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="article">
-                <div class='photo' [ngStyle]="{'backgroundImage': contents[1].url}">
-                </div>
-                <div class="card-footer">
-                    <div>
-                        <h2 class='card-title'>{{contents[1].title}}</h2>
-                        <h3 class='card-text'>{{contents[1].text}}</h3>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="article">
-                <div class='photo' [ngStyle]="{'backgroundImage': contents[2].url}">
-                </div>
-                <div class="card-footer">
-                    <div>
-                        <h2 class='card-title'>{{contents[2].title}}</h2>
-                        <h3 class='card-text'>{{contents[2].text}}</h3>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="article">
-                <div class='photo' [ngStyle]="{'backgroundImage': contents[3].url}">
-                </div>
-                <div class="card-footer">
-                    <div>
-                        <h2 class='card-title'>{{contents[3].title}}</h2>
-                        <h3 class='card-text'>{{contents[3].text}}</h3>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="article">
-                <div class='photo' [ngStyle]="{'backgroundImage': contents[4].url}">
-                </div>
-                <div class="card-footer">
-                    <div>
-                        <h2 class='card-title'>{{contents[4].title}}</h2>
-                        <h3 class='card-text'>{{contents[4].text}}</h3>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="article">
-                <div class='photo' [ngStyle]="{'backgroundImage': contents[5].url}">
-                </div>
-                <div class="card-footer">
-                    <div>
-                        <h2 class='card-title'>{{contents[5].title}}</h2>
-                        <h3 class='card-text'>{{contents[5].text}}</h3>
-                    </div>
-
-                </div>
-            </div>
-            -->
+            <app-modal [photo]="modalImage" [title]="modalTitle" [status]="modalState" [statusPost]="statusPost" [statusArticle]="statusArticle" (statusPostFromModal)="statusModal1($event)" (statusArticleFromModal)="statusModal2($event)"></app-modal>
         </div>
-    </section>
-
-<!--NO ME FUNCIONA CUANDO EL USUARIO CIERRA EL MODAL QUE VUELVA AL ESTADO ORIGINAL-->
-    <app-modal [photo]="modalImage" [title]="modalTitle" [status]="modalState" [statusPost]="statusPost" [statusArticle]="statusArticle" (statusPostFromModal)="statusModal1($event)" (statusArticleFromModal)="statusModal2($event)"></app-modal>
-
     
-<!--
-    <div class="modal">
-        <div class="modal-content" [ngStyle]="{'backgroundImage': contents[0].url}">
-            <span class="close-button">×</span>
-            <h1>{{contents[0].title}}</h1>
-        </div>
-    </div>
--->

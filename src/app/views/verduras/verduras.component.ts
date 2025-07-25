@@ -13,63 +13,6 @@ import { Verduras } from './verduras.interface';
 })
 export class VerdurasComponent {
 
-/**ARRAY DE 2 DIMENSIONES 
- * public vegetables:{title: string, text:string, url: string}[][]=[
-    [
-      {
-        title: 'Lechuga', 
-        text:'Lechugas frescas del día', 
-        url: 'url(https://www.lavanguardia.com/files/og_thumbnail/uploads/2021/03/05/60421be64918d.jpeg)' 
-      }, //Objeto0 0
-    ],
-    [
-      {
-        title: 'Tomate', 
-        text:'Tomates del Perelló', 
-        url: 'url(https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2024/03/07/17098165627875.jpg)' 
-      }, //Objeto1 0
-    ],
-    [
-      {
-        title: 'Berenjena', 
-        text:'Berenjenas de Almagro', 
-        url: 'url(https://estaticos-cdn.prensaiberica.es/clip/7d08691e-b082-4540-ad4f-51dc14f8d23b_16-9-aspect-ratio_default_0.jpg)' 
-      }, //Objeto2 0
-    ],
-    [
-      {
-        title: 'Cebolla', 
-        text:'Cebolla dulce', 
-        url: 'url(https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/10/02/morada-blanca-charlota-para-que-se-utiliza-cada-tipo-de-cebolla.jpeg)' 
-      }, //Objeto3 0
-    ]
-  ];
-*/
-
-
-  /*public vegetables:{title: string, text:string, url: string}[]=[
-      {
-        title: 'Lechuga',
-        text:'Lechugas frescas del día',
-        url: 'url(https://www.lavanguardia.com/files/og_thumbnail/uploads/2021/03/05/60421be64918d.jpeg)'
-      }, //Objeto0 
-      {
-        title: 'Tomate',
-        text:'Tomates del Perelló',
-        url: 'url(https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2024/03/07/17098165627875.jpg)'
-      }, //Objeto1 
-      {
-        title: 'Berenjena',
-        text:'Berenjenas de Almagro',
-        url: 'url(https://estaticos-cdn.prensaiberica.es/clip/7d08691e-b082-4540-ad4f-51dc14f8d23b_16-9-aspect-ratio_default_0.jpg)'
-      }, //Objeto2 
-      {
-        title: 'Cebolla',
-        text:'Cebolla dulce',
-        url: 'url(https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2023/10/02/morada-blanca-charlota-para-que-se-utiliza-cada-tipo-de-cebolla.jpeg)'
-      }, //Objeto3 
-  ];*/
-
    /**USANDO LA INTERFACE */
     public vegetables:Verduras[]=[
       {
@@ -94,26 +37,20 @@ export class VerdurasComponent {
       }, //Objeto3 
   ];
 
-
-
-
-  /**LO SEIGUIETE QUE ME QUEDA HACER ES CUANDO EL USUARIO HACA CLICK EN ALGUNA DE LAS FOTOS, EL HIJO (ARTICLE) ENVIA LA INFORMACIÓN AL PADRE, Y ESTE ENVIA  ESA INFORMACIÓN AL OTRO HIJO PARA QUE DESPLIEGUE EL MODAL*/
 public modalImage:string='';//Para enviar al modal
 public modalTitle:string='';//Para enviar al modal
 public modalState:boolean=true;//Para enviar al modal
 
   /*INFORMACIÓN RECIBIDA DEL COMPONENTE HIJO (ARTICLE)*/
-public imageDetail(urlPhotoArticle:string):void{
-  //alert(urlPhotoArticle); //DE CONTROL
-  this.modalImage=urlPhotoArticle;
-  this.modalState=!this.modalState;
-}
+  public imageDetail(urlPhotoArticle:string):void{
+    this.modalImage=urlPhotoArticle;
+    this.modalState=!this.modalState;
+  }
 
 
-public imageDetailTitle(titlePhotoArticle:string):void{
-  //alert(urlPhotoArticle); //DE CONTROL
-  this.modalTitle=titlePhotoArticle;
-}
+  public imageDetailTitle(titlePhotoArticle:string):void{
+    this.modalTitle=titlePhotoArticle;
+  }
 
 
 

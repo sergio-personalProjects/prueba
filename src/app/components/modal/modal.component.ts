@@ -23,8 +23,6 @@ export class ModalComponent {
    this.statusArticle='none';
   }
 
-  
-/**NO ME FUNCIONA CUANDO SE CIERRA EL MODAL QUE VUELVA AL ESTADO ORIGINAL */
   @Output() statusPostFromModal = new EventEmitter<string>();
   @Output() statusArticleFromModal = new EventEmitter<string>();
 
@@ -36,5 +34,4 @@ export class ModalComponent {
     this.statusArticleFromModal.emit(statusArticleFromModal);
     alert(statusArticleFromModal);
   }
-
 }
