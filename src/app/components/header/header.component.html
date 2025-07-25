@@ -1,21 +1,4 @@
-    <header>
-        <nav class="header">
-            
-            <ul>
-                <li (click)="onClickFruits()"><a href="#">Frutas</a></li>
-                <li (click)="onClickVegetables()"><a href="#">Verduras</a></li>
-            </ul>
-        </nav>
-    @if(onFruit === true){
-        <div class="banner" [ngStyle]="{'background-image': 'url(' +urlPhotoFruit1+ ')'}">
-            <h2>{{titleH2}}</h2>
-            <h1>{{titleH1}}</h1>
-        </div>
-    }@else{
-        <div class="banner" [ngStyle]="{'background-image': 'url(' +urlPhotoFruit2+ ')'}">
-            <h2>{{titleH2}}</h2>
-            <h1>{{titleH1}}</h1>
-        </div>
-    }
-        
-    </header>
+
+<div>
+    <h1 (click)="onClick($event)">La Ciudad de las Artes y de las Ciencias</h1>
+</div>

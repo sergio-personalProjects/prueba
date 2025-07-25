@@ -1,33 +1,6 @@
-<!-- Main -->
-<main class="content">
-    <section>
-        <div class="grid">
-            @for (fruit of fruits; let i = $index; track fruit){
-            <div class="card">
-                <div class="photo" [ngStyle]="{'background-image': 'url(' + fruits[i][0].url +')'}">
-                    <div class="title" (click)="onClickModalFruits(i)">{{fruits[i][0].name}}</div>
-                </div>
-            </div>
-            }
-        </div>
-
-        <div class="grid">
-            @for (vegetable of vegetables; let i = $index; track vegetable){
-            <div class="card" >
-                <div class="photo" [ngStyle]="{'background-image': 'url(' + vegetables[i][0].url +')'}">
-                    <div class="title" (click)="onClickModalVegetables(i)">{{vegetables[i][0].name}}</div>
-                </div>
-            </div>
-            }
-        </div>
-    </section>
-</main>
-
-
-
-    <div [ngClass]="modal ? 'modal' : 'modal show-modal'">
-        <div class="modal-content" [ngStyle]="{'background-image': 'url(' + modalImage +')'}">
-            <span class="close-button" (click)="onCloseModal()">×</span>
-            <h1>{{modalTitle}}</h1>
-        </div>
+<body style="background-color: beige">
+    <div style="display: flex; margin: 0% 10% 0% 10%; background-color: white; padding: 0% 5% 0% 5%;">
+        <app-menu style="width: 50%;"></app-menu>
+        <app-article style="width: 50%;"></app-article>
     </div>
+</body>
