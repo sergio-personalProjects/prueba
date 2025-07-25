@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cat } from '../models/response.interface';
+import { Pokemon } from '../models/pokemon.interface';
 import { DragonBall, OriginPlanet, Transformation } from '../models/dragonball.interface';
 
 @Injectable({
@@ -14,6 +15,24 @@ export class RequestsService {
   public getResponse(url:string): Observable<Cat[]>{
     return this.http.get<Cat[]>(url);
   }
+
+  public getPokemon(url:string): Observable<Pokemon>{
+    return this.http.get<Pokemon>(url);
+  }
+
+  /**PARA EJEMPLO DE OTRO SERVICIO 
+   * 
+   *   public add(numA:number, numB:number):number{
+    return numA + numB;
+  }
+  */
+
+  /**PRUEBA DRAGON BALL */
+/*OPCION UNIFICADA GENERADA POR IA* 
+public getDragonBallData(url: string): Observable<DragonBall | OriginPlanet | Transformation> {
+    return this.http.get<DragonBall | OriginPlanet | Transformation>(url);
+  }*/
+  
 
   public getDragonBall(url:string): Observable<DragonBall>{
     return this.http.get<DragonBall>(url); 
