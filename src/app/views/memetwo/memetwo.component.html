@@ -1,0 +1,11 @@
+
+<!-- Vista Meme2 -->
+    <div class="meme">
+        <section>
+            <div class="grid">
+                <!-- Componente Card -->
+                <app-card [titleMeme]="contentsMemes[current].nameMeme" [imageMeme]="contentsMemes[current].imageMeme"></app-card>
+            </div>
+            <button (click)="onPrevious()">Anterior</button><button (click)="onNext()">Siguiente</button>
+        </section>
+    </div>

@@ -1,0 +1,17 @@
+    <div class="github">
+       <div>
+        @for(content of contents; track content; let i= $index){
+            <img src="{{content.imageUser}}" alt="" (click)="onClick(i)">
+            <h1>{{content.loginUser}}</h1>
+        }
+        </div>
+    </div>
+
+    <div class= {{modalStatus}}>
+        <div class="modal-content" [ngStyle]="{'backgroundImage': modalImage}">
+            <span class="close-button" (click)="closeModal()">×</span>
+            <h1>{{modalText}}</h1>
+        </div>
+    </div>
+
+
