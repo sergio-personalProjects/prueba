@@ -4,18 +4,37 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 @Component({
   selector: 'app-modal',
   standalone: true,
-  imports: [NgClass, NgStyle],
+  imports: [NgStyle, NgClass],
   templateUrl: './modal.component.html',
   styleUrl: './modal.component.css'
 })
 export class ModalComponent {
-  @Input() modalStatus:boolean=true;
-  @Input() modalImageMeme: string ='';
-  @Input() modalTitleMeme: string='Nombre'
-  @Output() close = new EventEmitter<boolean>();
+  @Input() title:string='';
+  @Input() photo:string='';
+  @Input() status:boolean=true;
 
-  public closeModal():void{
-    this.close.emit(true);
-  };
+  @Input() statusPost:string='estado post';
+  @Input() statusArticle:string='estado article';
+
+
+  public onCloseModal():void{
+   this.status=!this.status;
+   this.statusPost='';
+   this.statusArticle='none';
+  }
+
+  
+/**NO ME FUNCIONA CUANDO SE CIERRA EL MODAL QUE VUELVA AL ESTADO ORIGINAL */
+  @Output() statusPostFromModal = new EventEmitter<string>();
+  @Output() statusArticleFromModal = new EventEmitter<string>();
+
+  public status1(statusPostFromModal:string):void{
+    this.statusPostFromModal.emit(statusPostFromModal);
+  }
+
+  public status2(statusArticleFromModal:string):void{
+    this.statusArticleFromModal.emit(statusArticleFromModal);
+    alert(statusArticleFromModal);
+  }
 
 }

@@ -1,9 +1,11 @@
 import { Routes } from '@angular/router';
-import { Ejercicio1Component } from './views/ejercicio1/ejercicio1.component';
-import { Ejercicio2Component } from './views/ejercicio2/ejercicio2.component';
+import { FrutasComponent } from './views/frutas/frutas.component';
+import { PescadosComponent } from './views/pescados/pescados.component';
+import { VerdurasComponent } from './views/verduras/verduras.component';
 
-export const routes: Routes = [
-    {path: '', redirectTo: 'ejercicio1', pathMatch: 'full' },
-    {path: 'ejercicio1', component: Ejercicio1Component},
-    {path: 'ejercicio2', component: Ejercicio2Component},
+export const routes: Routes = [    
+    {path:'', redirectTo:'/frutas', pathMatch:'full'},//Esta línea del array sirve para redireccionar de forma automática
+    {path:'frutas', component: FrutasComponent},
+    {path:'verduras', component: VerdurasComponent},
+    {path:'pescados', component: PescadosComponent},
 ];

@@ -1,0 +1,69 @@
+
+    <main class="content">
+        <section>
+            <div class="grid">
+                <!--
+                <app-article></app-article>
+                <app-article [title]="vegetable.title" [text]="vegetable.text" [photo]="vegetable.url" [urlPhoto]="vegetable.url"></app-article>
+                -->
+                @for(vegetable of vegetables; track vegetable; let i =$index){
+                    <!--
+                    <app-article [title]="vegetables[i].title" [text]="vegetables[i].text" [photo]="vegetables[i].url"></app-article>
+                    -->
+                    <app-article [title]="vegetable.title" [text]="vegetable.text" [photo]="vegetable.url" (urlPhoto)="imageDetail($event)" (titlePhoto)="imageDetailTitle($event)"></app-article>
+                }
+                <!--
+                <div class="article">
+                    <div class='photo' [ngStyle]="{'backgroundImage': vegetables[0].url}">
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <h2 class='card-title'>{{vegetables[0].title}}</h2>
+                            <h3 class='card-text'>{{vegetables[0].text}}</h3>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class='photo' [ngStyle]="{'backgroundImage': vegetables[1].url}">
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <h2 class='card-title'>{{vegetables[1].title}}</h2>
+                            <h3 class='card-text'>{{vegetables[1].text}}</h3>
+                        </div>
+                
+                    </div>
+                </div>
+                
+                <div class="article">
+                    <div class='photo' [ngStyle]="{'backgroundImage': vegetables[2].url}">
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <h2 class='card-title'>{{vegetables[2].title}}</h2>
+                            <h3 class='card-text'>{{vegetables[2].text}}</h3>
+                        </div>
+                
+                    </div>
+                </div>
+
+                <div class="article">
+                    <div class='photo' [ngStyle]="{'backgroundImage': vegetables[3].url}">
+                    </div>
+                    <div class="card-footer">
+                        <div>
+                            <h2 class='card-title'>{{vegetables[3].title}}</h2>
+                            <h3 class='card-text'>{{vegetables[3].text}}</h3>
+                        </div>
+                
+                    </div>
+                </div>
+                -->
+            </div>
+        </section>
+    </main>
+
+    <app-modal [photo]="modalImage" [title]="modalTitle" [status]="modalState"></app-modal>
+

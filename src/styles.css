@@ -1,299 +1,127 @@
-/* You can add global styles to this file, and also import other style files */
 body {
-  background-color: #efefef;
-  color: #3a3a3a;
-  background-color: white;
-  line-height: 1.5;
-  font-family: "Open Sans", sans-serif;
-}
-
-#page {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px;
-  padding-left: 10px;
-  padding-right: 10px;
+    background-color: #efefef;
+    color: #3a3a3a;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5;
 }
 
 .content {
-  margin-top: 30px;
-}
-
-button {
-  font-family: "Open Sans", sans-serif;
-}
-
-.grid {
-  display: grid;
-  grid-column-gap: var(--grid-column-gap);
-  grid-row-gap: var(--grid-row-gap)
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    max-width: 1200px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .grid {
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 25px;
-}
-
-.photo {
-  height: 283px;
-  width: 100%;
-  margin-bottom: 0;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-column-gap: 25px;
+    grid-row-gap: 50px;
 }
 
 .card {
-  margin-top: 25px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+    height: 285px;
+    width: 100%;
+    margin-bottom: 25px;
 }
 
-.modal-card {
-  margin-top: 25px;
-  width: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+.article {
+    height: 285px;
+    width: 100%;
+    margin-bottom: 50px;
 }
 
 
-.card .card-title {
-  font-family: "Montserrat", Sans-serif;
-  font-size: 21px;
-  text-transform: uppercase;
-  line-height: 1.3em;
-  color: #C4001A;
-  margin: 10px 0px 10px 0px;
-  padding: 15px 0px 0px 0px;
+.photo {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url(https://s1.eestatic.com/2021/03/09/ciencia/nutricion/564704609_174935756_1706x960.jpg);
+}
+
+.title {
+    color: white;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    text-align: center;
+    padding: 25% 0;
 }
 
 
-.card .bigger {
-  opacity: 0.0;
-  position: absolute;
-  top: 180px;
-  right: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.card:hover .bigger {
-  opacity: 1;
-  transition: 0.5s;
-}
-
-.titles {
-  margin-left: 10px;
-}
-
-.trigger {
-  font-family: "Roboto Condensed", Sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #FFFFFF;
-  background-color: #C4001A;
-  padding: 10px 50px 10px 50px;
-}
-
-#render-more {
-  text-align: center;
-}
-
-#render-more button {
-  background-color: white;
-  text-transform: uppercase;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.9px;
-  color: #C4001A;
-  border: solid 1px #C4001A;
-  margin-bottom: 30px;
-  margin-top: 20px;
-
-}
-
-#render-more button:hover {
-  background-color: rgba(196, 0, 26, 0.05);
-}
-
+/* Header */
 .header {
-  height: 110px;
-  background-color: #C4001A;
-  padding: 20px;
-  border-bottom: 1px solid #C4001A;
-  width: 100vw;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4.44rem;
+    padding: 0 12%;
+    background-color: white;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
+    font-family: Verdana, sans-serif;
+    font-size: .77rem;
+    font-weight: bold;
 }
 
-.question-link {
-  color: #ffffff;
-  display: inline-block;
-  font-family: 'Oswald', sans-serif;
-  font-size: 16px;
-  text-align: left;
-  font-weight: 300;
-  text-transform: uppercase;
-  padding: 0 40px;
+.header li {
+    display: inline;
+    padding-right: 2.22rem;
 }
 
-.question {
-  margin: 60px auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.header li a {
+    text-decoration: none;
+    color: #4a4a4a;
 }
 
-.answer-bank {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+@media only screen and (max-width: 550px) {
+    .header {
+        flex-direction: column;
+    }
 }
 
-.answer {
-  display: flex;
-  margin: 20px;
-  padding: 15px;
-  align-items: center;
-  justify-content: center;
-  width: 220px;
-  color: #C4001A;
-  font-family: 'Oswald', sans-serif;
-  font-size: 18px;
-  text-align: center;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-.answer {
-  color: #61bff9;
-  border: 1px solid #C4001A;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.answer:hover {
-  background-color: #f78383;
-  transition: background-color .1s, color .1s;
-}
-
-.answer:active {
-  color: #ffffff;
+/* Footer */
+footer {
+    display: flex;
+    align-items: center;
+    padding: 0 1%;
+    background-color: #212121;
+    line-height: 1.5;
+    font-family: "Corissant One", "Merriweather", serif;
+    height: 400px;
 }
 
 
-.container {
-  display: inline-block;
-  width: 100%;
-  margin: auto;
-}
+@media only screen and (max-width: 750px) {
+    footer {
+        flex-direction: column;
+        padding: 0 10% 2rem 10%;
+    }
 
-.card-header img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.card-body {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  padding: 20px;
-  min-height: 125px;
-}
-
-.tag {
-  background-color: #ccc;
-  color: #fff;
-  border-radius: 50px;
-  font-size: 12px;
-  margin: 0;
-  padding: 2px 10px;
-  text-transform: uppercase;
-}
-
-.card-body h4 {
-  margin: 10px 0;
-}
-
-.card-body p {
-  font-size: 14px;
-  margin: 0 0 40px 0;
-  font-weight: 500;
-  color: rgb(70, 68, 68);
 }
 
 
-.journal {
-  padding: 0 25% 4rem 25%;
-  color: #4a4a4a;
-  font-family: "Work Sans", serif;
+.card-footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.photo.first {
-  position: relative;
-  top: -2.77rem;
-  margin-bottom: 1.67rem;
+.card-footer .card-title {
+    font-family: "Montserrat", Sans-serif;
+    font-size: 21px;
+    text-transform: uppercase;
+    line-height: 1.3em;
+    color: #C4001A;
+    margin: 10px 0px 10px 0px;
+    padding: 15px 0px 0px 0px;
 }
 
-.photo .image-container {
-  overflow: hidden;
-  margin-bottom: 1.11rem;
-}
-
-.photo .image-container2 {
-  overflow: hidden;
-  margin-bottom: 1.11rem;
-}
-
-
-.photo .image-container img {
-  width: 100%;
-}
-
-.photo .image-container2 img {
-  width: 31%;
-}
-
-/************/
-.container-view-three {
-  margin: 0px auto;
-}
-
-.photos-view-three {
-  position: absolute;
-  margin: auto;
-  width: 40%;
-  height: auto;
-  margin-left: 30%;
-  margin-right: 30%;
-}
-
-.frutas {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  align-items: center;
-  justify-content: center;
-}
 
 /* Modal */
 

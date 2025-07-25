@@ -1,7 +1,7 @@
-<div class="header" (mouseover)="onHeader(1)" (mouseout)="onHeader(0)" 
-    [ngStyle]="{'filter': 'blur('+statusHeader+')'}"
-    style= "background-image: url(https://media.istockphoto.com/id/1172427455/es/foto/hermosa-puesta-de-sol-sobre-el-mar-tropical.jpg?s=612x612&w=0&k=20&c=q48rq3n3xFFwv0ihyYG8j-3MmrKwTWhGhT8isczbzh8=);">
-    <a routerLink="ejercicio1" routerLinkActive="active">Ejercicio 1</a>
-    <a routerLink="ejercicio2" routerLinkActive="active">Ejercicio 2</a>
-</div>
-
+<nav class="header">
+    <ul>
+        <li><a routerLink="/frutas" routerLinkActive="active" >Frutas</a></li>
+        <li><a routerLink="/verduras" routerLinkActive="active" >Verduras</a></li>
+        <li><a routerLink="/pescados" routerLinkActive="active" >Pescados</a></li>
+    </ul>
+</nav>

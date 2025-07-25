@@ -1,0 +1,37 @@
+<main class="content">
+    <section>
+        <div class="grid">
+            @for(fruit of fruits; track fruit; let i=$index){
+                <app-card [titleFruits]="fruits[i].name" [photo]="fruits[i].url"></app-card>
+            }
+
+        <!-- PARA VER EL DESARROLLO MENTAL
+            <div class="photo" [ngStyle]="{'backgroundImage': fruits[i].url}">
+                <div class="title">{{fruits[i].name}}</div>
+            </div>
+        -->
+        </div>
+        <!--PARA VER EL DESARROLLO MENTAL
+                <div class="grid">
+                    <div class="card" (click)="onClick(1)">
+                        <app-card [titleFruits]="titleFruits"></app-card>
+                    </div>
+                    
+                    <div class="card" (click)="onClick(2)">
+                        <app-card></app-card>
+                    </div>
+                </div>
+
+                <div class="grid" >
+                    <div class="card" (click)="onClick(3)">
+                        <app-card></app-card>
+                    </div>
+                    
+                    <div class="card" (click)="onClick(4)">
+                        <app-card></app-card>
+                    </div>
+                </div>
+            -->
+    </section>
+
+</main>
