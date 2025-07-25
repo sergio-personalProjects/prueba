@@ -1,0 +1,16 @@
+<h2>{{resp}}</h2>
+
+<p>{{front}}</p>
+<p>{{back}}</p>
+<img src="{{front}}" alt="">
+
+
+@for(content of contents; track content; let i =$index){
+    <div style="display: flex; float: left;">
+        <p>{{content.name}}</p>
+        <img src="{{content.image}}" alt="" width="100px">
+    </div>
+}
+
+
+
