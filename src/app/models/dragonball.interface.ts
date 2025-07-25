@@ -1,4 +1,4 @@
-
+//https://dragonball-api.com/api/characters/65
 export interface DragonBall {
     id:              number;
     name:            string;
@@ -35,6 +35,6 @@ export interface customArrayDragonBall{
     name: string;
     image: string;
     planetImage: string;
-    nameTransform?: string;
-    transformImage?: string;
+    nameTransform: string;
+    transformImage: string;
 }

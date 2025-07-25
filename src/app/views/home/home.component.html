@@ -1,16 +1,30 @@
-<h2>{{resp}}</h2>
-
-<p>{{front}}</p>
-<p>{{back}}</p>
-<img src="{{front}}" alt="">
-
-
-@for(content of contents; track content; let i =$index){
-    <div style="display: flex; float: left;">
-        <p>{{content.name}}</p>
-        <img src="{{content.image}}" alt="" width="100px">
+<div class="grid">
+    <div class="card">
+        @for(content of contents; track content; let i =$index){
+        <div class="card-footer">
+            <div>
+                <div>
+                    @if(status){
+                    <h2 class='card-title'>{{content.name}}</h2>
+                    <img src="{{content.image}}" alt="" width="300px">
+                    }@else {
+                    <div [ngStyle]="{'background-image' : 'url('+content.planetImage}"
+                        style="background-position: center;">
+                        <h2 class='card-title'>{{content.nameTransform}}</h2>
+                        <img src="{{content.transformImage}}" alt="" width="300px">
+                    </div>
+                    }
+                </div>
+            </div>
+            <button (click)="onClick()">
+                <h3 class='card-text'>{{buttonTransform}}</h3>
+            </button>
+        </div>
+        }
     </div>
-}
+</div>
+
+
 
 
 
