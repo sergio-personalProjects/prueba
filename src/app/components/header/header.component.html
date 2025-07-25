@@ -1,7 +1,21 @@
-<nav class="header">
-    <ul>
-        <li><a routerLink="/view1" routerLinkActive="active" >Ejercicio 1</a></li>
-        <li><a routerLink="/view2" routerLinkActive="active" >Ejercicio 2</a></li>
-        <li><a routerLink="/view3" routerLinkActive="active" >Ejercicio 3</a></li>
-    </ul>
-</nav>
+    <header>
+        <nav class="header">
+            
+            <ul>
+                <li (click)="onClickFruits()"><a href="#">Frutas</a></li>
+                <li (click)="onClickVegetables()"><a href="#">Verduras</a></li>
+            </ul>
+        </nav>
+    @if(onFruit === true){
+        <div class="banner" [ngStyle]="{'background-image': 'url(' +urlPhotoFruit1+ ')'}">
+            <h2>{{titleH2}}</h2>
+            <h1>{{titleH1}}</h1>
+        </div>
+    }@else{
+        <div class="banner" [ngStyle]="{'background-image': 'url(' +urlPhotoFruit2+ ')'}">
+            <h2>{{titleH2}}</h2>
+            <h1>{{titleH1}}</h1>
+        </div>
+    }
+        
+    </header>
