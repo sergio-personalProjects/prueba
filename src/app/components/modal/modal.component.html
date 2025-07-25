@@ -1,20 +1,6 @@
-<!-- MODAL-->
-<div [ngClass]="modalClass">
-    <div class="modal-content">
+<div [ngClass]="modalStatus ? 'modal':'modal show-modal'">
+    <div class="modal-content" [ngStyle]="{'background-image': 'url(' + modalImageMeme + ')'}">
         <span class="close-button" (click)="closeModal()">×</span>
-        <div class="container">
-            <div class="card">
-                <div class="card-header">
-                    <img src="{{imageResident}}" alt="" />
-                </div>
-                <div class="card-body">
-                    <span class="tag">{{nameResident}}</span>
-                </div>
-                <div id='render-more'>
-                    <button (click)="customPage(-1)">ANTERIOR</button>
-                    <button (click)="customPage(1)">SIGUIENTE</button>
-                </div>
-            </div>
-        </div>
+        <h1>{{modalTitleMeme}}</h1>
     </div>
 </div>

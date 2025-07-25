@@ -1,6 +1,7 @@
-
-<!-- HEADER -->
-<div class="header" [ngStyle]="{'background-color': colorHeader}">
-    <a routerLink="ejercicio1" routerLinkActive="active" href="ejercicio1.html" class="question-link" (mouseover)="onHeader1(1)" (mouseout)="onHeader1(0)">{{nameEjercicio1}}</a>
-    <a routerLink="ejercicio2" routerLinkActive="active" href="ejercicio2.html" class="question-link"(mouseover)="onHeader2(1)" (mouseout)="onHeader2(0)">{{nameEjercicio2}}</a>
+<div class="header" (mouseover)="onHeader(1)" (mouseout)="onHeader(0)" 
+    [ngStyle]="{'filter': 'blur('+statusHeader+')'}"
+    style= "background-image: url(https://media.istockphoto.com/id/1172427455/es/foto/hermosa-puesta-de-sol-sobre-el-mar-tropical.jpg?s=612x612&w=0&k=20&c=q48rq3n3xFFwv0ihyYG8j-3MmrKwTWhGhT8isczbzh8=);">
+    <a routerLink="ejercicio1" routerLinkActive="active">Ejercicio 1</a>
+    <a routerLink="ejercicio2" routerLinkActive="active">Ejercicio 2</a>
 </div>
+

@@ -1,0 +1,21 @@
+<!-- CAROUSEL  -->
+<div class="card">
+    <div class='photo'
+        style="background-image: url({{imageCarousel}});"
+        (click)="onDetail(currentCharacter)">
+    </div>
+    <div class="footer">
+        <div class="titles">
+            <h2 class='card-title'>{{nameCarousel}}</h2>
+        </div>
+    </div>
+    <div id='render-more'>
+        <button (click)="customCharacter(-1)">ANTERIOR</button>
+        <button (click)="customCharacter(1)">SIGUIENTE</button>
+    </div>
+    <div id='render-more'>
+        <button (click)="customPage(-1)">
+            << Página</button>
+                <button (click)="customPage(1)">Página >></button>
+    </div>
+</div>

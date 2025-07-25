@@ -1,0 +1,24 @@
+    <div class="journal">
+        <div class="first photo">
+            <div [ngStyle]="{'display': displayGridHIJO}">
+                <div class="image-container2">
+                    @if(status===0){
+                        @for(angular of contentsAngularGithub;track angular; let i=$index){
+                            <img src="{{angular.avatar}}" (click)="onClickDetail(i)">
+                        }
+                    }@else {
+                        @for(symfony of contentsSymfonyGithub;track symfony; let i=$index){
+                            <img src="{{symfony.avatar}}" (click)="onClickDetail(i)">
+                        }
+                    }
+                </div>
+                <span class="caption">Profiles: {{nameContent}}</span>
+            </div>
+            <div [ngStyle]="{'display': displayDetailHIJO}">
+                <div class="image-container">
+                    <img src="{{imageDetail}}" (click)="returnInitial()">
+                    <p>{{nameDetail}}</p>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,108 +1,107 @@
 import { Component } from '@angular/core';
-import { PokemonComponent } from "../../components/pokemon/pokemon.component";
-import { PhotoComponent } from "../../components/photo/photo.component";
+import { CarouselComponent } from "../../components/carousel/carousel.component";
+import { EpisodeComponent } from "../../components/episode/episode.component";
 import { RequestsService } from '../../services/requests.service';
+import { ModalComponent } from "../../components/modal/modal.component";
 
 @Component({
   selector: 'app-ejercicio2',
   standalone: true,
-  imports: [PokemonComponent, PhotoComponent],
+  imports: [CarouselComponent, EpisodeComponent, ModalComponent],
   templateUrl: './ejercicio2.component.html',
   styleUrl: './ejercicio2.component.css'
 })
 export class Ejercicio2Component {
+    public constructor(public service:RequestsService){}
 
-  public constructor(public service: RequestsService) { };
-  
-  public namePokemon:string='';
-  public imagePokemon:string='';
-  public pokemonSearch:{name:string}[]=[{name:'charmander'}, {name:'bulbasaur'}, {name:'pikachu'}];
-  public urlPokemon1:string='https://pokeapi.co/api/v2/pokemon/'; //+ this.pokemonSearch[0].name//;
-  public arrayPokemons:{name:string, image:string}[]=[];
-  public arrayPokemonsDetails:{rear:string, front:string, rearShiny:string, frontShiny:string}[]=[];
-  public namePokemonSelected:string='';
-  public statusCard:string='';
-  
-  
+    public currentCharacter:number=0;
+    public name:string='NAME';
+    public currentPage:number=1;
+    public url:string='https://rickandmortyapi.com/api/character?page=' +this.currentPage;
+
+    public contents:{name:string, image:string, id: number}[]=[];//AÑADI "ID" PARA PODER TRAZAR CON EL ARRAY DE EPISODEOS
 
 
-  public  getArrayPushPokemon():void{
-    for(let i=0; i<this.pokemonSearch.length; i++){
-      this.urlPokemon1='https://pokeapi.co/api/v2/pokemon/' + this.pokemonSearch[i].name;
-      this.service.getpokemon(this.urlPokemon1).subscribe(response => {
-        //CREACIÓN DE ARRAY CON LAS 4 IMAGENES
-        this.arrayPokemons.push({
-          name:response.name, 
-          image:response.sprites.front_default
-        });
-        console.log(this.arrayPokemons[i].name);
-        console.log(this.arrayPokemons[i].image);
-        
-        //CREACIÓN DE ARRAY CON LAS 4 IMAGENES
-        this.arrayPokemonsDetails.push({
-          rear:response.sprites.back_default, 
-          front:response.sprites.front_default, 
-          rearShiny:response.sprites.back_shiny, 
-          frontShiny:response.sprites.front_shiny,
-        });
-      });
-    };
-  };
-
-
-  
-  
-  public currentPokemon:number=0;
-  public namePokemonSelectedComponent(name:string):void{
-    if(name ==='charmander'){
-      this.currentPokemon=0;
-      this.namePokemonSelected='charmander';
-    }else{
-      if(name ==='bulbasaur'){
-        this.currentPokemon=1;
-        this.namePokemonSelected='bulbasaur';
-      }else{
-        if(name ==='pikachu'){
-          this.currentPokemon=2;
-          this.namePokemonSelected='pikachu';
+    public getRickMortyAPI():void{
+      this.contents=[];
+      this.service.getRickMortyAPI(this.url).subscribe(response=>{
+        for(let i=0; i<response.results.length;i++){
+          this.contents.push({
+            name:response.results[i].name,
+            image:response.results[i].image,
+            id:response.results[i].id
+          })
         };
-      }
-    }
-  };
-
-
-
-  public statusCardsPokemon(status:string):void{
-    this.statusCard=status;
-  };
-
-/**SACAR LA HABILIDAD */
-  public habilidadCharmander:string='';
-  public habilidadBulbasaur:string='';
-  public habilidadPikachu:string='';
-  public urlAbilitiesCharmander='https://pokeapi.co/api/v2/ability/66/'
-  public urlAbilitiesBulbasur='https://pokeapi.co/api/v2/ability/65/'
-  public urlAbilitiesPikachu='https://pokeapi.co/api/v2/ability/9/'
-
- public getAbility():void{
-    this.service.getpokemonAbilities(this.urlAbilitiesCharmander).subscribe(response => {
-      this.habilidadCharmander=response.effect_entries[0].effect;
-    });
-    this.service.getpokemonAbilities(this.urlAbilitiesBulbasur).subscribe(response => {
-      this.habilidadBulbasaur=response.effect_entries[0].effect;
-    });
-    this.service.getpokemonAbilities(this.urlAbilitiesPikachu).subscribe(response => {
-      this.habilidadPikachu=response.effect_entries[0].effect;
+        /**DE CONTROL */
+        for(let i=0; i<this.contents.length;i++){
+          console.log(this.contents[i].name);
+        };
     });
   };
-
-
-
 
   public ngOnInit():void{
-    this.getArrayPushPokemon();
-    this.getAbility();
+    this.getRickMortyAPI()
+    this.getEpisode()
+  };
+
+  public onInfoCarousel(character:number):void{
+    this.currentCharacter=character;
+  };
+
+  public onPageCarousel(pageCarousel:number): void{
+    this.currentPage=pageCarousel;
+    this.url='https://rickandmortyapi.com/api/character?page=' +this.currentPage;
+    this.contents=[];
+    this.getRickMortyAPI();
+  }
+
+
+/**PARTE DE LOS EPISODEOS */
+public nameEpisode:string='episodeo'
+public dateEpisode:string='episodeo'
+public episode:string='episodeo'
+public currentEpisode:number=0;
+public visbilityEpisode:string='none';
+public urlEpisode:string='https://rickandmortyapi.com/api/episode?page='+this.currentPage;
+public episodes:{name:string, date:string, episode: string}[]=[];
+
+public getEpisode():void{
+      this.contents=[];
+      this.service.getRickMortyEpisodes(this.urlEpisode).subscribe(response=>{
+        for(let i=0; i<response.results.length;i++){
+          this.episodes.push({
+            name:response.results[i].name,
+            date:response.results[i].air_date,
+            episode:response.results[i].episode
+          })
+        };
+        /**DE CONTROL */
+        for(let i=0; i<this.episodes.length;i++){
+          console.log(this.episodes[i].episode);
+        };
+        this.nameEpisode=response.results[0].name;
+        this.dateEpisode=response.results[0].air_date;
+        this.episode=response.results[0].episode;
+    });
+  };
+
+  public onVisibility(visible:string):void{
+    this.visbilityEpisode=visible;
   };
 
 
+  public onCurrentEpisode(i:number):void{
+    this.currentEpisode=i;
+  }
+
+  /**MODAL */
+  public modalVisibility:boolean=true;
+
+  public openModal(status:boolean):void{
+    this.modalVisibility=status;
+  }
+
+  public closeModal(status:boolean):void{
+    this.modalVisibility=status;
+  }
 }

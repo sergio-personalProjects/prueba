@@ -1,25 +1,39 @@
-<!-- EJERCICIO 2  -->
+<!-- EJERCICIO 2  [nameEpisode]="contents[currentCharacter].name"-->
     <div id="page">
+        <section >
+            <div class="content">
+                <div class="grid">
+                    <app-carousel 
+                        [nameCarousel]="contents[currentCharacter].name" 
+                        [imageCarousel]="contents[currentCharacter].image"
+                        (character)="onInfoCarousel($event)"
+                        [arrayContents]="contents"
+                        [currentPageEjercicio2]="currentPage"
+                        (currentPageCarousel)="onPageCarousel($event)"
+                        (displayEpisode)="onVisibility($event)"
+                        (modal)="openModal($event)">
+                    </app-carousel>
 
-        <section>
-            <div class="grid">
-                @for(pokemon of arrayPokemons; track pokemon; let i=$index) {
-                    <app-pokemon [namePokemon]="pokemon.name" 
-                    [imagePokemon]="pokemon.image" 
-                    [idPokemon]="currentPokemon"
-                    (data)="namePokemonSelectedComponent($event)"
-                    [status]="statusCard"></app-pokemon>
-                }
+                    <app-episode
+                    [nameEpisode]="episodes[currentEpisode].name"
+                    [dateEpisode]="episodes[currentEpisode].date"
+                    [numberEpisode]="episodes[currentEpisode].episode"
+                    [displayHIJO]="visbilityEpisode"
+                    [arrayContentsEpisodes]="episodes"
+                    (current)="onCurrentEpisode($event)"
+                    ></app-episode>
+                </div>
             </div>
-           
-            <app-photo [front]="arrayPokemonsDetails[currentPokemon].front" 
-            [rear]="arrayPokemonsDetails[currentPokemon].rear" 
-            [frontShiny]="arrayPokemonsDetails[currentPokemon].frontShiny" 
-            [rearShiny]="arrayPokemonsDetails[currentPokemon].rearShiny"
-            (dataStatusCard)="statusCardsPokemon($event)"
-            [textContentCharmander]="habilidadCharmander"
-            [textContentBulbasaur]="habilidadBulbasaur"
-            [textContentPikachu]="habilidadPikachu"
-            [namePokemonSelected]="namePokemonSelected"></app-photo>
         </section>
+        <app-modal
+        [modalStatus]="modalVisibility"
+        [modalImageMeme]="contents[currentCharacter].image"
+        [modalTitleMeme]="contents[currentCharacter].name"
+        (close)="closeModal($event)"
+        ></app-modal>
     </div>
+
+
+
+
+

@@ -1,27 +1,18 @@
-<!-- EJERCICIO 1  -->
-<div id="page">
-    <section>
-        <div class="content">
-             @for(planet of contentsPlanets; track planet; let i = $index){
-                <app-card [nameCard]="planet.name" [dimensionCard]="planet.dimension" (open)="openModal($event)"></app-card>
-             }
-            <app-modal (close)="closeModal($event)" (currentResidentModal)="residentModal($event)" [modalClass]="showModal" [arrayResidents]="contentsResidents" [imageResident]="contentsResidents[currentResident].image" [nameResident]="contentsResidents[currentResident].name"></app-modal>
-        </div>
-    </section>
-
-    <div id='render-more'>
-        @if(currentPage===1){
-            <button [ngStyle]="{'display': 'none'}">ANTERIOR</button>
-            <button [ngStyle]="{'display': 'visible'}" (click)="pageControl(1)">SIGUIENTE</button>
-        }@else{
-            @if(currentPage>1 && currentPage<7){
-                <button [ngStyle]="{'display': 'visible'}" (click)="pageControl(0)">ANTERIOR</button>
-                <button [ngStyle]="{'display': 'visible'}" (click)="pageControl(1)">SIGUIENTE</button>
-            }
-        }@if(currentPage===7){
-                <button [ngStyle]="{'display': 'visible'}" (click)="pageControl(0)">ANTERIOR</button>
-                <button [ngStyle]="{'display': 'none'}">SIGUIENTE</button>
-            }
+    <!-- EJERCICIO 1  -->
+    <div style="display:flex; flex-direction: row; justify-content: center; align-items: center; margin-bottom: 50px;">
+        <p style="margin-right: 50px;" (click)="onClickFather(0)">Angular</p>
+        <p (click)="onClickFather(1)">Symfony</p>
     </div>
-
-</div>
+    
+    
+<app-github 
+    [contentsAngularGithub]="contentsAngular" 
+    [contentsSymfonyGithub]="contentsSymfony" 
+    [nameContent]="searchTerm"
+    [status]="status"
+    (data)="statusAppGithub($event)"
+    [displayDetailHIJO]="displayDetail"
+    [displayGridHIJO]="displayGrid">
+</app-github>
+    
+    
