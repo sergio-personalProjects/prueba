@@ -54,16 +54,6 @@ export class PhotoComponent {
     this.statusPhotosDetail='none';
     this.statusPhotos='';
     this.dataStatusCard.emit('');
-    /*if(this.namePokemonSelected==='charmander'){
-      this.textContent=this.textContentCharmander;
-    }else{
-      if(this.namePokemonSelected==='bulbasaur'){
-        this.textContent=this.textContentBulbasaur;
-      }else{
-        if(this.namePokemonSelected==='pikachu'){
-          this.textContent=this.textContentPikachu;
-        }
-      }*/
     }
   };
 

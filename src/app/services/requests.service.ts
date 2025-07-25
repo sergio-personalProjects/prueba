@@ -10,7 +10,6 @@ import { EffectEntry, Pokemon, Welcome } from '../models/pokemon.interface';
 export class RequestsService {
 
   constructor(public http:HttpClient) { };
-  //public urlApi:string='https://rickandmortyapi.com/api/location?page=1'
 
 
   public getResponseRickMorty(url:string): Observable<Rickmorty> {

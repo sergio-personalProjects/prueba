@@ -18,11 +18,6 @@ export class PokemonComponent {
   
   
   public onDetail():void{
-    alert('Pokemon seleccionado: ' + this.namePokemon +'\n' +'id:' +this.idPokemon);
     this.data.emit(this.namePokemon);
-
-    
   }
-
-
 }

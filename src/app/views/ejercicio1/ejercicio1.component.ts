@@ -19,19 +19,16 @@ export class Ejercicio1Component {
   public dimension: string = '';
   public currentPage: number = 1;
   public url: string = 'https://rickandmortyapi.com/api/location?page=' + this.currentPage;
-
   public contentsPlanets: { name: string, dimension: string }[] = [];
 
 
   public getResponse(): void {
     this.service.getResponseRickMorty(this.url).subscribe(response => {
-
       for (let i = 0; i < response.results.length; i++) {
         this.contentsPlanets.push({
           name: response.results[i].name,
           dimension: response.results[i].dimension
         })
-
       };
     });
   };
@@ -79,9 +76,7 @@ export class Ejercicio1Component {
       for (let i = 0; i < response.results.length; i++) {
         for (let j = 0; j < response.results.length; j++) {
           this.urlResident = response.results[i].residents[j];
-
           this.service.getResponseResidents(this.urlResident).subscribe(response => {
-
             this.contentsResidents.push({
               name: response.name,
               image: response.image
@@ -96,6 +91,4 @@ export class Ejercicio1Component {
   public residentModal(resident: number): void {
     this.currentResident = resident;
   }
-
-
 }

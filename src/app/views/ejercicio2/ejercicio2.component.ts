@@ -30,9 +30,6 @@ export class Ejercicio2Component {
     for(let i=0; i<this.pokemonSearch.length; i++){
       this.urlPokemon1='https://pokeapi.co/api/v2/pokemon/' + this.pokemonSearch[i].name;
       this.service.getpokemon(this.urlPokemon1).subscribe(response => {
-        //this.namePokemon=response.name;//DE CONTROL
-        //this.imagePokemon=response.sprites.front_default;//DE CONTROL
-
         //CREACIÓN DE ARRAY CON LAS 4 IMAGENES
         this.arrayPokemons.push({
           name:response.name, 
@@ -79,12 +76,7 @@ export class Ejercicio2Component {
     this.statusCard=status;
   };
 
-/**SACAR LA HABILIDAD
- * Inicialmente pensaba meter el texto en el array de las 4 sprites... pero no sé hacerlo... entonces
- * estoy haciendo esto de forma muy rudimentaria.... pero no tiene sentido...
- * 
- * PREGUNTAR AL PROFESOR
- */
+/**SACAR LA HABILIDAD */
   public habilidadCharmander:string='';
   public habilidadBulbasaur:string='';
   public habilidadPikachu:string='';
@@ -108,12 +100,7 @@ export class Ejercicio2Component {
 
 
   public ngOnInit():void{
-    //this.getResponseCharmander();
     this.getArrayPushPokemon();
-    //alert(this.urlPokemon1); //DE CONTROL
-    //alert(this.pokemonSearch[0].name)//DE CONTROL
-    //alert(this.pokemonSearch[1].name)//DE CONTROL
-    //alert(this.pokemonSearch[2].name)//DE CONTROL
     this.getAbility();
   };
 
